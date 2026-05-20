@@ -34,14 +34,16 @@ No `strict_max_version` is set.
 3. Use `Load Temporary Add-on...`.
 4. Select `thunderbird/manifest.json`.
 
-If stylesheet caching gets in the way, changing the stylesheet filename in `manifest.json` has been the most reliable cache buster so far.
+For normal iteration, bump the patch version in `thunderbird/manifest.json` for each test build. That has been enough to break Thunderbird's cache during development.
+
+If Thunderbird starts caching the stylesheet again, there is also a fallback debug workflow in `thunderbird/debug/` using UUID-named CSS files and a debug-only manifest.
 
 ## Packaging
 
 Create the XPI from inside `thunderbird/`:
 
 ```bash
-zip -r gruvbox-dynamic-thunderbird.xpi manifest.json gruvbox-mail-panels.css
+zip -r "output/gruvbox-dynamic-thunderbird-<version>.xpi" manifest.json gruvbox-mail-panels.css
 ```
 
 Install it from Thunderbird:
@@ -64,3 +66,4 @@ Planned next steps for `firefox/`:
 
 - Thunderbird requires an explicit `browser_specific_settings.gecko.id` for installable XPI themes.
 - `strict_min_version` is currently set to the only version tested so far.
+- `thunderbird/debug/` and `thunderbird/output/` are generated workflow folders and are ignored by git.

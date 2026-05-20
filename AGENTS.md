@@ -18,8 +18,18 @@ Packaged artifacts live in:
 
 - `thunderbird/output/`
 
-Do not edit the active UUID-named CSS file directly unless there is a very specific reason.
-The normal workflow is:
+Normal workflow:
+
+1. Edit `thunderbird/gruvbox-mail-panels.css`.
+2. Bump the patch version in `thunderbird/manifest.json` for each test iteration.
+3. Reload the theme or package a new XPI if needed.
+
+Reason:
+
+- Thunderbird cache invalidation has proven reliable when the manifest version changes.
+- Use patch version bumps for test iterations.
+
+Fallback workflow if Thunderbird starts caching the stylesheet again:
 
 1. Edit `thunderbird/gruvbox-mail-panels.css`.
 2. Generate a fresh UUID filename.
@@ -27,11 +37,6 @@ The normal workflow is:
 4. Copy `thunderbird/manifest.json` to `thunderbird/debug/manifest.json`.
 5. Update `thunderbird/debug/manifest.json` so `theme_experiment.stylesheet` points to the new UUID CSS file.
 6. Reload the Thunderbird debug add-on from `thunderbird/debug/manifest.json`.
-
-Reason:
-
-- Thunderbird has aggressively cached the `theme_experiment` stylesheet during development.
-- Changing the CSS filename is the most reliable cache-busting method found so far.
 
 ## UUID CSS Files
 
@@ -41,7 +46,7 @@ UUID-named CSS files in `thunderbird/debug/` are generated cache-busting artifac
 - Treat UUID CSS files as generated working files.
 - Keep the tracked release manifest pointing to `gruvbox-mail-panels.css`.
 - Keep the debug manifest pointing to the active UUID CSS file.
-- `thunderbird/debug/` should be ignored by git.
+- `thunderbird/debug/` is a fallback path and should be ignored by git.
 
 ## Packaging
 
@@ -74,15 +79,22 @@ Expected contents:
 
 Manifest version currently in use:
 
-- `0.0.2`
+- `0.0.3`
 
-Use these suffix rules for package filenames:
+Use semantic versioning with these rules:
 
-- stable/package candidate: `0.0.2`
-- release candidates: `0.0.2-rc1`, `0.0.2-rc2`, `0.0.2-rc3`, ...
+- patch: increment for every test iteration and cache-busting package
+- minor: increment for commit-worthy milestones
+- major: increment only for deliberately large changes
+
+Examples:
+
+- test iterations: `0.0.3`, `0.0.4`, `0.0.5`
+- commit-worthy milestones: `0.1.0`, `0.2.0`
+- major changes: `1.0.0`
 
 Rules:
 
-- Do not add `-rcN` to `manifest.json` unless there is a specific reason to test Thunderbird manifest-version caching.
-- Normal RC iteration uses the same manifest version and changes only the XPI filename suffix.
-- When making a real version bump, update `manifest.json` first, then name the XPI to match that version.
+- Update `manifest.json` when testing so Thunderbird sees a new version.
+- Package filenames should match the manifest version unless there is a specific reason not to.
+- RC suffixes are optional and only needed when you deliberately want RC-style naming.
