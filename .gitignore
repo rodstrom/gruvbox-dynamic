@@ -1,2 +1,3 @@
 research/
-thunderbird/*.xpi
+thunderbird/debug/
+thunderbird/output/

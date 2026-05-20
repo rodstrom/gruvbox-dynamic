@@ -13,6 +13,80 @@
   --gb-sidebar-hover: #f2e5bc;
   --gb-border: #b57614;
   --gb-list-bg: #fcf8e8;
+  --gb-header-bg: #ebdbb2;
+  --gb-unread: #9d0006;
+  --gb-new-mail-text: #cc241d;
+}
+
+#folderTree li[data-properties~="new-messages"] > .container .name,
+#folderTree li[data-properties~="new-messages"] > .container .folder-name,
+#folderTree li[data-properties~="new-messages"] > .container .tree-view-row-name,
+#folderTree li.new-messages > .container .name,
+#folderTree li.new-messages > .container .folder-name,
+#folderTree li.new-messages > .container .tree-view-row-name {
+  color: var(--gb-new-mail-text) !important;
+}
+
+#folderTree li[data-properties~="new-messages"] > .container .unread-count,
+#folderTree li[data-properties~="new-messages"] > .container .unread,
+#folderTree li[data-properties~="new-messages"] > .container .count,
+#folderTree li[data-properties~="new-messages"] > .container [data-l10n-id*="unread"],
+#folderTree li.new-messages > .container .unread-count,
+#folderTree li.new-messages > .container .unread,
+#folderTree li.new-messages > .container .count,
+#folderTree li.new-messages > .container [data-l10n-id*="unread"] {
+  color: var(--gb-unread) !important;
+  fill: var(--gb-unread) !important;
+  stroke: var(--gb-unread) !important;
+  border-color: var(--gb-unread) !important;
+  box-shadow: inset 0 0 0 1px var(--gb-unread) !important;
+}
+
+#folderTree li.selected[data-properties~="new-messages"] > .container .unread-count,
+#folderTree li.selected[data-properties~="new-messages"] > .container .unread,
+#folderTree li.selected[data-properties~="new-messages"] > .container .count,
+#folderTree li.selected[data-properties~="new-messages"] > .container [data-l10n-id*="unread"],
+#folderTree li.selected.new-messages > .container .unread-count,
+#folderTree li.selected.new-messages > .container .unread,
+#folderTree li.selected.new-messages > .container .count,
+#folderTree li.selected.new-messages > .container [data-l10n-id*="unread"],
+#folderPane:focus-within #folderTree li.selected[data-properties~="new-messages"] > .container .unread-count,
+#folderPane:focus-within #folderTree li.selected[data-properties~="new-messages"] > .container .unread,
+#folderPane:focus-within #folderTree li.selected[data-properties~="new-messages"] > .container .count,
+#folderPane:focus-within #folderTree li.selected[data-properties~="new-messages"] > .container [data-l10n-id*="unread"],
+#folderPane:focus-within #folderTree li.selected.new-messages > .container .unread-count,
+#folderPane:focus-within #folderTree li.selected.new-messages > .container .unread,
+#folderPane:focus-within #folderTree li.selected.new-messages > .container .count,
+#folderPane:focus-within #folderTree li.selected.new-messages > .container [data-l10n-id*="unread"],
+#folderPane:not(:focus-within) #folderTree li.selected[data-properties~="new-messages"] > .container .unread-count,
+#folderPane:not(:focus-within) #folderTree li.selected[data-properties~="new-messages"] > .container .unread,
+#folderPane:not(:focus-within) #folderTree li.selected[data-properties~="new-messages"] > .container .count,
+#folderPane:not(:focus-within) #folderTree li.selected[data-properties~="new-messages"] > .container [data-l10n-id*="unread"],
+#folderPane:not(:focus-within) #folderTree li.selected.new-messages > .container .unread-count,
+#folderPane:not(:focus-within) #folderTree li.selected.new-messages > .container .unread,
+#folderPane:not(:focus-within) #folderTree li.selected.new-messages > .container .count,
+#folderPane:not(:focus-within) #folderTree li.selected.new-messages > .container [data-l10n-id*="unread"] {
+  background: #ebdbb2 !important;
+  background-color: #ebdbb2 !important;
+  color: var(--gb-unread) !important;
+  fill: var(--gb-unread) !important;
+  stroke: var(--gb-unread) !important;
+  border-color: var(--gb-unread) !important;
+  box-shadow: inset 0 0 0 1px var(--gb-unread) !important;
+}
+
+#folderTree li.selected.unread.children.collapsed > .container > .unread-count,
+#folderPane:focus-within #folderTree li.selected.unread.children.collapsed > .container > .unread-count,
+#folderPane:not(:focus-within) #folderTree li.selected.unread.children.collapsed > .container > .unread-count,
+#folderTree li.selected.new-messages.unread.children.collapsed > .container > .unread-count,
+#folderPane:focus-within #folderTree li.selected.new-messages.unread.children.collapsed > .container > .unread-count,
+#folderPane:not(:focus-within) #folderTree li.selected.new-messages.unread.children.collapsed > .container > .unread-count {
+  color: var(--gb-unread) !important;
+  background: var(--gb-list-bg) !important;
+  background-color: var(--gb-list-bg) !important;
+  border: 1px solid var(--gb-unread) !important;
+  border-color: var(--gb-unread) !important;
+  box-shadow: none !important;
 }
 
 #folderTree li > .container:hover:not(:has(+ ul:hover)),
@@ -22,13 +96,43 @@
   color: #282828 !important;
 }
 
-#folderTree li.selected > .container,
-#folderTree li.selected:hover > .container,
-#folderTree:focus-within li.selected > .container,
-#folderTree:focus-within li.selected:hover > .container {
+#folderTree li.selected > .container {
+  background: var(--gb-selected) !important;
+  background-color: var(--gb-selected) !important;
+  color: #282828 !important;
+  box-shadow: inset 0 0 0 1px #d79921 !important;
+}
+
+#folderTree li.selected:hover > .container {
+  background: var(--gb-selected) !important;
+  background-color: var(--gb-selected) !important;
+  box-shadow: inset 0 0 0 1px var(--gb-border) !important;
+}
+
+#folderPane:focus-within #folderTree li.selected > .container {
   background: var(--gb-selected-strong) !important;
   background-color: var(--gb-selected-strong) !important;
   color: #282828 !important;
+  box-shadow: inset 0 0 0 1px var(--gb-border) !important;
+}
+
+#folderPane:focus-within #folderTree li.selected:hover > .container {
+  background: var(--gb-selected-strong) !important;
+  background-color: var(--gb-selected-strong) !important;
+  box-shadow: inset 0 0 0 1px #8f3f71 !important;
+}
+
+#folderPane:not(:focus-within) #folderTree li.selected > .container,
+#folderPane:not(:focus-within) #folderTree li.selected > .container {
+  background: var(--gb-selected) !important;
+  background-color: var(--gb-selected) !important;
+  color: #282828 !important;
+  box-shadow: inset 0 0 0 1px #d79921 !important;
+}
+
+#folderPane:not(:focus-within) #folderTree li.selected:hover > .container {
+  background: var(--gb-selected) !important;
+  background-color: var(--gb-selected) !important;
   box-shadow: inset 0 0 0 1px var(--gb-border) !important;
 }
 
@@ -49,8 +153,8 @@
 #threadTree thead.tree-table-header tr,
 #threadTree thead[is="tree-view-table-header"] th,
 #threadTree thead.tree-table-header th {
-  background: var(--gb-list-bg) !important;
-  background-color: var(--gb-list-bg) !important;
+  background: var(--gb-header-bg) !important;
+  background-color: var(--gb-header-bg) !important;
   background-image: none !important;
   color: #282828 !important;
 }
@@ -83,6 +187,13 @@
   box-shadow: inset 0 0 0 1px #d79921 !important;
 }
 
+#threadTree [is="tree-view-table-body"] > .table-layout.selected:hover {
+  background: var(--gb-selected) !important;
+  background-color: var(--gb-selected) !important;
+  background-image: none !important;
+  box-shadow: inset 0 0 0 1px var(--gb-border) !important;
+}
+
 #threadTree [is="tree-view-table-body"]:is(:focus, :focus-within) > .table-layout.selected,
 #threadTree [is="tree-view-table-body"] > .table-layout.selected:focus-within {
   background: var(--gb-selected-strong) !important;
@@ -90,6 +201,14 @@
   background-image: none !important;
   color: #282828 !important;
   box-shadow: inset 0 0 0 1px var(--gb-border) !important;
+}
+
+#threadTree [is="tree-view-table-body"]:is(:focus, :focus-within) > .table-layout.selected:hover,
+#threadTree [is="tree-view-table-body"] > .table-layout.selected:focus-within:hover {
+  background: var(--gb-selected-strong) !important;
+  background-color: var(--gb-selected-strong) !important;
+  background-image: none !important;
+  box-shadow: inset 0 0 0 1px #8f3f71 !important;
 }
 
 #threadTree [is="tree-view-table-body"] > .table-layout:hover:not(.selected) {
@@ -113,6 +232,80 @@
     --gb-sidebar-hover: #665c54;
     --gb-border: #8f3f71;
     --gb-list-bg: #1d2021;
+    --gb-header-bg: #3c3836;
+    --gb-unread: #fb4934;
+    --gb-new-mail-text: #fb4934;
+  }
+
+  #folderTree li[data-properties~="new-messages"] > .container .name,
+  #folderTree li[data-properties~="new-messages"] > .container .folder-name,
+  #folderTree li[data-properties~="new-messages"] > .container .tree-view-row-name,
+  #folderTree li.new-messages > .container .name,
+  #folderTree li.new-messages > .container .folder-name,
+  #folderTree li.new-messages > .container .tree-view-row-name {
+    color: var(--gb-new-mail-text) !important;
+  }
+
+  #folderTree li[data-properties~="new-messages"] > .container .unread-count,
+  #folderTree li[data-properties~="new-messages"] > .container .unread,
+  #folderTree li[data-properties~="new-messages"] > .container .count,
+  #folderTree li[data-properties~="new-messages"] > .container [data-l10n-id*="unread"],
+  #folderTree li.new-messages > .container .unread-count,
+  #folderTree li.new-messages > .container .unread,
+  #folderTree li.new-messages > .container .count,
+  #folderTree li.new-messages > .container [data-l10n-id*="unread"] {
+    color: var(--gb-unread) !important;
+    fill: var(--gb-unread) !important;
+    stroke: var(--gb-unread) !important;
+    border-color: var(--gb-unread) !important;
+    box-shadow: inset 0 0 0 1px var(--gb-unread) !important;
+  }
+
+  #folderTree li.selected[data-properties~="new-messages"] > .container .unread-count,
+  #folderTree li.selected[data-properties~="new-messages"] > .container .unread,
+  #folderTree li.selected[data-properties~="new-messages"] > .container .count,
+  #folderTree li.selected[data-properties~="new-messages"] > .container [data-l10n-id*="unread"],
+  #folderTree li.selected.new-messages > .container .unread-count,
+  #folderTree li.selected.new-messages > .container .unread,
+  #folderTree li.selected.new-messages > .container .count,
+  #folderTree li.selected.new-messages > .container [data-l10n-id*="unread"],
+  #folderPane:focus-within #folderTree li.selected[data-properties~="new-messages"] > .container .unread-count,
+  #folderPane:focus-within #folderTree li.selected[data-properties~="new-messages"] > .container .unread,
+  #folderPane:focus-within #folderTree li.selected[data-properties~="new-messages"] > .container .count,
+  #folderPane:focus-within #folderTree li.selected[data-properties~="new-messages"] > .container [data-l10n-id*="unread"],
+  #folderPane:focus-within #folderTree li.selected.new-messages > .container .unread-count,
+  #folderPane:focus-within #folderTree li.selected.new-messages > .container .unread,
+  #folderPane:focus-within #folderTree li.selected.new-messages > .container .count,
+  #folderPane:focus-within #folderTree li.selected.new-messages > .container [data-l10n-id*="unread"],
+  #folderPane:not(:focus-within) #folderTree li.selected[data-properties~="new-messages"] > .container .unread-count,
+  #folderPane:not(:focus-within) #folderTree li.selected[data-properties~="new-messages"] > .container .unread,
+  #folderPane:not(:focus-within) #folderTree li.selected[data-properties~="new-messages"] > .container .count,
+  #folderPane:not(:focus-within) #folderTree li.selected[data-properties~="new-messages"] > .container [data-l10n-id*="unread"],
+  #folderPane:not(:focus-within) #folderTree li.selected.new-messages > .container .unread-count,
+  #folderPane:not(:focus-within) #folderTree li.selected.new-messages > .container .unread,
+  #folderPane:not(:focus-within) #folderTree li.selected.new-messages > .container .count,
+  #folderPane:not(:focus-within) #folderTree li.selected.new-messages > .container [data-l10n-id*="unread"] {
+    background: #3c3836 !important;
+    background-color: #3c3836 !important;
+    color: var(--gb-unread) !important;
+    fill: var(--gb-unread) !important;
+    stroke: var(--gb-unread) !important;
+    border-color: var(--gb-unread) !important;
+    box-shadow: inset 0 0 0 1px var(--gb-unread) !important;
+  }
+
+  #folderTree li.selected.unread.children.collapsed > .container > .unread-count,
+  #folderPane:focus-within #folderTree li.selected.unread.children.collapsed > .container > .unread-count,
+  #folderPane:not(:focus-within) #folderTree li.selected.unread.children.collapsed > .container > .unread-count,
+  #folderTree li.selected.new-messages.unread.children.collapsed > .container > .unread-count,
+  #folderPane:focus-within #folderTree li.selected.new-messages.unread.children.collapsed > .container > .unread-count,
+  #folderPane:not(:focus-within) #folderTree li.selected.new-messages.unread.children.collapsed > .container > .unread-count {
+    color: var(--gb-unread) !important;
+    background: var(--gb-list-bg) !important;
+    background-color: var(--gb-list-bg) !important;
+    border: 1px solid var(--gb-unread) !important;
+    border-color: var(--gb-unread) !important;
+    box-shadow: none !important;
   }
 
   #folderTree li > .container:hover:not(:has(+ ul:hover)),
@@ -122,13 +315,43 @@
     color: #d5c4a1 !important;
   }
 
-  #folderTree li.selected > .container,
-  #folderTree li.selected:hover > .container,
-  #folderTree:focus-within li.selected > .container,
-  #folderTree:focus-within li.selected:hover > .container {
+  #folderTree li.selected > .container {
+    background: #a87933 !important;
+    background-color: #a87933 !important;
+    color: #ebdbb2 !important;
+    box-shadow: inset 0 0 0 1px #7c6f64 !important;
+  }
+
+  #folderTree li.selected:hover > .container {
+    background: #a87933 !important;
+    background-color: #a87933 !important;
+    box-shadow: inset 0 0 0 1px #8f3f71 !important;
+  }
+
+  #folderPane:focus-within #folderTree li.selected > .container {
     background: #b57614 !important;
     background-color: #b57614 !important;
     color: #ebdbb2 !important;
+    box-shadow: inset 0 0 0 1px #8f3f71 !important;
+  }
+
+  #folderPane:focus-within #folderTree li.selected:hover > .container {
+    background: #b57614 !important;
+    background-color: #b57614 !important;
+    box-shadow: inset 0 0 0 1px #d65d0e !important;
+  }
+
+  #folderPane:not(:focus-within) #folderTree li.selected > .container,
+  #folderPane:not(:focus-within) #folderTree li.selected > .container {
+    background: #a87933 !important;
+    background-color: #a87933 !important;
+    color: #ebdbb2 !important;
+    box-shadow: inset 0 0 0 1px #7c6f64 !important;
+  }
+
+  #folderPane:not(:focus-within) #folderTree li.selected:hover > .container {
+    background: #a87933 !important;
+    background-color: #a87933 !important;
     box-shadow: inset 0 0 0 1px #8f3f71 !important;
   }
 
@@ -149,8 +372,8 @@
   #threadTree thead.tree-table-header tr,
   #threadTree thead[is="tree-view-table-header"] th,
   #threadTree thead.tree-table-header th {
-    background: var(--gb-list-bg) !important;
-    background-color: var(--gb-list-bg) !important;
+    background: var(--gb-header-bg) !important;
+    background-color: var(--gb-header-bg) !important;
     color: #d5c4a1 !important;
   }
 
@@ -180,6 +403,13 @@
     box-shadow: inset 0 0 0 1px #7c6f64 !important;
   }
 
+  #threadTree [is="tree-view-table-body"] > .table-layout.selected:hover {
+    background: #a87933 !important;
+    background-color: #a87933 !important;
+    background-image: none !important;
+    box-shadow: inset 0 0 0 1px #8f3f71 !important;
+  }
+
   #threadTree [is="tree-view-table-body"]:is(:focus, :focus-within) > .table-layout.selected,
   #threadTree [is="tree-view-table-body"] > .table-layout.selected:focus-within {
     background: #b57614 !important;
@@ -187,6 +417,14 @@
     background-image: none !important;
     color: #ebdbb2 !important;
     box-shadow: inset 0 0 0 1px #8f3f71 !important;
+  }
+
+  #threadTree [is="tree-view-table-body"]:is(:focus, :focus-within) > .table-layout.selected:hover,
+  #threadTree [is="tree-view-table-body"] > .table-layout.selected:focus-within:hover {
+    background: #b57614 !important;
+    background-color: #b57614 !important;
+    background-image: none !important;
+    box-shadow: inset 0 0 0 1px #d65d0e !important;
   }
 
   #threadTree [is="tree-view-table-body"] > .table-layout:hover:not(.selected) {

@@ -3,7 +3,7 @@
 	"name": "Gruvbox Dynamic",
 	"description": "Gruvbox theme with dynamic dark/light mode support for Thunderbird.",
 	"author": "Herman Rödström",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"browser_specific_settings": {
 		"gecko": {
 			"id": "gruvbox-dynamic.thunderbird@rodstrom.se",
@@ -19,16 +19,16 @@
 	"theme": {
 		"colors": {
 			"exp_threadpane_color": "#f2e5bc",
-			"frame": "#ebdbb2",
-			"frame_inactive": "#d5c4a1",
-			"toolbar": "#fbf1c7",
+			"frame": "#d5c4a1",
+			"frame_inactive": "#bdae93",
+			"toolbar": "#ebdbb2",
 			"toolbar_top_separator": "#ebdbb2",
-			"toolbar_vertical_separator": "#bdae93",
-			"toolbar_bottom_separator": "#ebdbb2",
+			"toolbar_vertical_separator": "#d65d0e",
+			"toolbar_bottom_separator": "#d65d0e",
 			"tab_background_separator": "#3c3836",
 			"tab_background_text": "#504945",
 			"tab_text": "#282828",
-			"tab_line": "#3c3836",
+			"tab_line": "#d65d0e",
 			"tab_loading": "#665c54",
 			"bookmark_text": "#282828",
 
@@ -36,7 +36,7 @@
 			"sidebar_text": "#282828",
 			"sidebar_highlight_text": "#9d0006",
 			"sidebar_highlight": "#d5c4a1",
-			"sidebar_border": "#9d0006",
+			"sidebar_border": "#d65d0e",
 
 			"toolbar_field": "#ebdbb2",
 			"toolbar_field_focus": "#d5c4a1",
@@ -64,8 +64,8 @@
 			"frame_inactive": "#3c3836",
 			"toolbar": "#3c3836",
 			"toolbar_top_separator": "#3c3836",
-			"toolbar_vertical_separator": "#a89984",
-			"toolbar_bottom_separator": "#3c3836",
+			"toolbar_vertical_separator": "#d65d0e",
+			"toolbar_bottom_separator": "#d65d0e",
 			"tab_background_separator": "#504945",
 			"tab_background_text": "#d5c4a1",
 			"tab_text": "#ebdbb2",
@@ -77,7 +77,7 @@
 			"sidebar_text": "#d5c4a1",
 			"sidebar_highlight_text": "#fb4934",
 			"sidebar_highlight": "#7c6f64",
-			"sidebar_border": "#cc241d",
+			"sidebar_border": "#d65d0e",
 
 			"toolbar_field": "#504945",
 			"toolbar_field_focus": "#665c54",
