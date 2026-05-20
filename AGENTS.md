@@ -38,6 +38,28 @@ Fallback workflow if Thunderbird starts caching the stylesheet again:
 5. Update `thunderbird/debug/manifest.json` so `theme_experiment.stylesheet` points to the new UUID CSS file.
 6. Reload the Thunderbird debug add-on from `thunderbird/debug/manifest.json`.
 
+## Firefox Theme Workflow
+
+Tracked Firefox manifest:
+
+- `firefox/manifest.json`
+
+Packaged artifacts live in:
+
+- `firefox/output/`
+
+Normal workflow:
+
+1. Edit `firefox/manifest.json`.
+2. Bump the patch version in `firefox/manifest.json` for each test iteration.
+3. Reload the theme or package a new XPI if needed.
+
+Reason:
+
+- Firefox testing should stay manifest-only for now.
+- Firefox does not currently need custom CSS.
+- Use patch version bumps for test iterations.
+
 ## UUID CSS Files
 
 UUID-named CSS files in `thunderbird/debug/` are generated cache-busting artifacts.
@@ -75,6 +97,16 @@ Expected contents:
 - `manifest.json`
 - `gruvbox-mail-panels.css`
 
+Package from inside `firefox/`:
+
+```bash
+zip -r "output/gruvbox-dynamic-firefox-<version>.xpi" manifest.json
+```
+
+Expected contents:
+
+- `manifest.json`
+
 ## Versioning
 
 Manifest version currently in use:
@@ -96,5 +128,10 @@ Examples:
 Rules:
 
 - Update `manifest.json` when testing so Thunderbird sees a new version.
+- Update `firefox/manifest.json` when testing so Firefox sees a new version.
 - Package filenames should match the manifest version unless there is a specific reason not to.
 - RC suffixes are optional and only needed when you deliberately want RC-style naming.
+
+Firefox note:
+
+- Do not add a Firefox CSS file unless there is a specific unsupported UI target that requires it.

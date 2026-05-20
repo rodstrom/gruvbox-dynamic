@@ -1,11 +1,11 @@
 # Gruvbox Dynamic
 
-Dynamic Gruvbox-inspired mail themes.
+Dynamic Gruvbox-inspired Thunderbird and Firefox themes.
 
 ## Status
 
 - `thunderbird/` contains the current working Thunderbird theme.
-- `firefox/` is reserved for a future Firefox version.
+- `firefox/` contains a Firefox theme manifest with matching light and dark variants.
 - `research/` contains local reference material and is ignored by git.
 
 ## Thunderbird
@@ -53,17 +53,53 @@ Install it from Thunderbird:
 3. Choose `Install Add-on From File...`.
 4. Select the generated `.xpi`.
 
-## Firefox Plan
+## Firefox
 
-Planned next steps for `firefox/`:
+The Firefox theme is currently manifest-only and does not use custom CSS.
 
-1. Extract the shared Gruvbox palette into a small documented source file.
-2. Create a Firefox theme manifest with matching light and dark variants.
-3. Decide whether Firefox should stay manifest-only or become a dynamic extension.
-4. Keep Thunderbird-specific thread pane overrides out of the Firefox package.
+Files:
+
+- `firefox/manifest.json`
+
+Current add-on id:
+
+`gruvbox-dynamic.firefox@rodstrom.se`
+
+Minimum tested Firefox version:
+
+`150.0`
+
+No `strict_max_version` is set.
+
+## Firefox Local Development
+
+1. Open Firefox.
+2. Go to `about:debugging`.
+3. Open `This Firefox`.
+4. Use `Load Temporary Add-on...`.
+5. Select `firefox/manifest.json`.
+
+For normal iteration, bump the patch version in `firefox/manifest.json` for each test build.
+
+Firefox does not currently need a custom stylesheet. Keep the Firefox package manifest-only unless there is a concrete UI gap that cannot be handled with theme color keys.
+
+## Firefox Packaging
+
+Create the XPI from inside `firefox/`:
+
+```bash
+zip -r "output/gruvbox-dynamic-firefox-<version>.xpi" manifest.json
+```
+
+Expected contents:
+
+ - `manifest.json`
+
+Keep Thunderbird-specific CSS and `theme_experiment` settings out of the Firefox package.
 
 ## Notes
 
 - Thunderbird requires an explicit `browser_specific_settings.gecko.id` for installable XPI themes.
+- Firefox currently uses only manifest theme keys and no CSS.
 - `strict_min_version` is currently set to the only version tested so far.
 - `thunderbird/debug/` and `thunderbird/output/` are generated workflow folders and are ignored by git.

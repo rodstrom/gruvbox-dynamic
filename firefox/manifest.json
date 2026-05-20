@@ -1,0 +1,93 @@
+{
+	"manifest_version": 2,
+	"name": "Gruvbox Dynamic",
+	"description": "Gruvbox theme with dynamic dark/light mode support for Firefox.",
+	"author": "Herman Rödström",
+	"version": "0.0.2",
+	"browser_specific_settings": {
+		"gecko": {
+			"id": "gruvbox-dynamic.firefox@rodstrom.se",
+			"strict_min_version": "150.0"
+		}
+	},
+	"theme": {
+		"colors": {
+			"frame": "#ebdbb2",
+			"frame_inactive": "#bdae93",
+			"toolbar": "#ebdbb2",
+			"toolbar_top_separator": "#ebdbb2",
+			"toolbar_vertical_separator": "#d65d0e",
+			"toolbar_bottom_separator": "#d65d0e",
+			"tab_background_separator": "#3c3836",
+			"tab_background_text": "#504945",
+			"tab_text": "#282828",
+			"tab_line": "#d65d0e",
+			"tab_loading": "#665c54",
+			"bookmark_text": "#282828",
+
+			"sidebar": "#ebdbb2",
+			"sidebar_text": "#282828",
+			"sidebar_highlight_text": "#9d0006",
+			"sidebar_highlight": "#d5c4a1",
+			"sidebar_border": "#d65d0e",
+
+			"toolbar_field": "#ebdbb2",
+			"toolbar_field_focus": "#d5c4a1",
+			"toolbar_field_border": "#bdae93",
+			"toolbar_field_border_focus": "#076678",
+			"toolbar_field_highlight": "#076678",
+			"toolbar_field_highlight_text": "#282828",
+			"toolbar_field_text": "#282828",
+			"toolbar_field_text_focus": "#282828",
+
+			"popup": "#ebdbb2",
+			"popup_text": "#282828",
+			"popup_border": "#bdae93",
+			"popup_highlight": "#076678",
+			"popup_highlight_text": "#fbf1c7",
+
+			"ntp_background": "#fbf1c7",
+			"ntp_text": "#282828"
+		}
+	},
+	"dark_theme": {
+		"colors": {
+			"frame": "#32302f",
+			"frame_inactive": "#3c3836",
+			"toolbar": "#3c3836",
+			"toolbar_top_separator": "#3c3836",
+			"toolbar_vertical_separator": "#d65d0e",
+			"toolbar_bottom_separator": "#d65d0e",
+			"tab_background_separator": "#504945",
+			"tab_background_text": "#d5c4a1",
+			"tab_text": "#ebdbb2",
+			"tab_line": "#d65d0e",
+			"tab_loading": "#d65d0e",
+			"bookmark_text": "#ebdbb2",
+
+			"sidebar": "#3c3836",
+			"sidebar_text": "#d5c4a1",
+			"sidebar_highlight_text": "#fb4934",
+			"sidebar_highlight": "#7c6f64",
+			"sidebar_border": "#d65d0e",
+
+			"toolbar_field": "#504945",
+			"toolbar_field_focus": "#665c54",
+			"toolbar_field_border": "#3c3836",
+			"toolbar_field_border_focus": "#d65d0e",
+			"toolbar_field_highlight": "#83a598",
+			"toolbar_field_highlight_text": "#ebdbb2",
+			"toolbar_field_text": "#d5c4a1",
+			"toolbar_field_text_focus": "#ebdbb2",
+
+			"popup": "#3c3836",
+			"popup_text": "#ebdbb2",
+			"popup_border": "#3c3836",
+			"popup_highlight": "#458588",
+			"popup_highlight_text": "#ebdbb2",
+
+			"ntp_background": "#32302f",
+			"ntp_text": "#ebdbb2"
+		}
+	}
+}
