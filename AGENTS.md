@@ -60,6 +60,30 @@ Reason:
 - Firefox does not currently need custom CSS.
 - Use patch version bumps for test iterations.
 
+## iTerm2 Theme Workflow
+
+Tracked iTerm2 preset:
+
+- `iterm2/gruvbox-dynamic.itermcolors`
+
+Normal workflow:
+
+1. Edit `iterm2/gruvbox-dynamic.itermcolors`.
+2. Import the preset in iTerm2 and verify both light and dark mode.
+3. Lint the preset after edits.
+
+Lint command:
+
+```bash
+plutil -lint "iterm2/gruvbox-dynamic.itermcolors"
+```
+
+Rules:
+
+- There is no UUID cache-busting workflow for iTerm2.
+- There is no packaging step for iTerm2 themes.
+- Keep iTerm2 work as a plain `.itermcolors` preset unless there is a concrete need for a full profile export.
+
 ## UUID CSS Files
 
 UUID-named CSS files in `thunderbird/debug/` are generated cache-busting artifacts.

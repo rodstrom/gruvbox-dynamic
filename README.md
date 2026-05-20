@@ -1,11 +1,12 @@
 # Gruvbox Dynamic
 
-Dynamic Gruvbox-inspired Thunderbird and Firefox themes.
+Dynamic Gruvbox-inspired Thunderbird, Firefox, and iTerm2 themes.
 
 ## Status
 
 - `thunderbird/` contains the current working Thunderbird theme.
 - `firefox/` contains a Firefox theme manifest with matching light and dark variants.
+- `iterm2/` contains an iTerm2 color preset with matching light and dark variants.
 - `research/` contains local reference material and is ignored by git.
 
 ## Thunderbird
@@ -97,9 +98,30 @@ Expected contents:
 
 Keep Thunderbird-specific CSS and `theme_experiment` settings out of the Firefox package.
 
+## iTerm2
+
+The iTerm2 theme is a single `.itermcolors` preset that contains both light and dark color variants.
+
+Files:
+
+- `iterm2/gruvbox-dynamic.itermcolors`
+
+## iTerm2 Local Development
+
+1. Import `iterm2/gruvbox-dynamic.itermcolors` in iTerm2.
+2. Apply the preset to a profile.
+3. Toggle macOS appearance to verify both light and dark variants.
+
+Lint the preset after edits:
+
+```bash
+plutil -lint "iterm2/gruvbox-dynamic.itermcolors"
+```
+
 ## Notes
 
 - Thunderbird requires an explicit `browser_specific_settings.gecko.id` for installable XPI themes.
 - Firefox currently uses only manifest theme keys and no CSS.
+- iTerm2 supports importing both light and dark variants from a single `.itermcolors` file.
 - `strict_min_version` is currently set to the only version tested so far.
 - `thunderbird/debug/` and `thunderbird/output/` are generated workflow folders and are ignored by git.
