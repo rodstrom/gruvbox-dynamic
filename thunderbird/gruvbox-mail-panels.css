@@ -1,0 +1,197 @@
+/* Light mode defaults */
+#folderPane,
+#folderTree,
+#threadPane,
+#threadPane > tree-view,
+#threadTree,
+#threadTree table[is="tree-view-table"],
+#threadTree [is="tree-view-table-body"] {
+  --gb-selected: #ddc48b;
+  --gb-selected-strong: #d79921;
+  --gb-selected-text: #282828;
+  --gb-hover: #ebdbb2;
+  --gb-sidebar-hover: #f2e5bc;
+  --gb-border: #b57614;
+  --gb-list-bg: #fcf8e8;
+}
+
+#folderTree li > .container:hover:not(:has(+ ul:hover)),
+#folderTree li:hover > .container:not(.selected) {
+  background: var(--gb-sidebar-hover) !important;
+  background-color: var(--gb-sidebar-hover) !important;
+  color: #282828 !important;
+}
+
+#folderTree li.selected > .container,
+#folderTree li.selected:hover > .container,
+#folderTree:focus-within li.selected > .container,
+#folderTree:focus-within li.selected:hover > .container {
+  background: var(--gb-selected-strong) !important;
+  background-color: var(--gb-selected-strong) !important;
+  color: #282828 !important;
+  box-shadow: inset 0 0 0 1px var(--gb-border) !important;
+}
+
+#threadPane,
+#threadPane > tree-view,
+#threadTree,
+#threadTree table[is="tree-view-table"],
+#threadTree [is="tree-view-table-body"] {
+  background-color: var(--gb-list-bg) !important;
+  color: #282828 !important;
+}
+
+#threadTree table[is="tree-view-table"],
+#threadTree table.tree-table,
+#threadTree thead[is="tree-view-table-header"],
+#threadTree thead.tree-table-header,
+#threadTree thead[is="tree-view-table-header"] tr,
+#threadTree thead.tree-table-header tr,
+#threadTree thead[is="tree-view-table-header"] th,
+#threadTree thead.tree-table-header th {
+  background: var(--gb-list-bg) !important;
+  background-color: var(--gb-list-bg) !important;
+  background-image: none !important;
+  color: #282828 !important;
+}
+
+#threadTree th[is="tree-view-table-header-cell"] .tree-table-cell,
+#threadTree th[is="tree-view-table-header-cell"] .tree-table-cell-container,
+#threadTree th[is="tree-view-table-header-cell"] button,
+#threadTree th[is="tree-view-table-header-cell"] .button-column-picker,
+#threadTree th[is="tree-view-table-header-cell"]::before,
+#threadTree th[is="tree-view-table-header-cell"]::after {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  color: #282828 !important;
+}
+
+#threadTree [is="tree-view-table-body"] > .table-layout,
+#threadTree [is="tree-view-table-body"] > .table-layout[data-properties~="dummy"]:not(.card-layout, :hover, .selected) {
+  background: var(--gb-list-bg) !important;
+  background-color: var(--gb-list-bg) !important;
+  background-image: none !important;
+  color: #282828 !important;
+}
+
+#threadTree [is="tree-view-table-body"] > .table-layout.selected {
+  background: var(--gb-selected) !important;
+  background-color: var(--gb-selected) !important;
+  background-image: none !important;
+  color: #282828 !important;
+  box-shadow: inset 0 0 0 1px #d79921 !important;
+}
+
+#threadTree [is="tree-view-table-body"]:is(:focus, :focus-within) > .table-layout.selected,
+#threadTree [is="tree-view-table-body"] > .table-layout.selected:focus-within {
+  background: var(--gb-selected-strong) !important;
+  background-color: var(--gb-selected-strong) !important;
+  background-image: none !important;
+  color: #282828 !important;
+  box-shadow: inset 0 0 0 1px var(--gb-border) !important;
+}
+
+#threadTree [is="tree-view-table-body"] > .table-layout:hover:not(.selected) {
+  background: var(--gb-hover) !important;
+  background-color: var(--gb-hover) !important;
+  color: #282828 !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  #folderPane,
+  #folderTree,
+  #threadPane,
+  #threadPane > tree-view,
+  #threadTree,
+  #threadTree table[is="tree-view-table"],
+  #threadTree [is="tree-view-table-body"] {
+    --gb-selected: #a87933;
+    --gb-selected-strong: #b57614;
+    --gb-selected-text: #ebdbb2;
+    --gb-hover: #665c54;
+    --gb-sidebar-hover: #665c54;
+    --gb-border: #8f3f71;
+    --gb-list-bg: #1d2021;
+  }
+
+  #folderTree li > .container:hover:not(:has(+ ul:hover)),
+  #folderTree li:hover > .container:not(.selected) {
+    background: #665c54 !important;
+    background-color: #665c54 !important;
+    color: #d5c4a1 !important;
+  }
+
+  #folderTree li.selected > .container,
+  #folderTree li.selected:hover > .container,
+  #folderTree:focus-within li.selected > .container,
+  #folderTree:focus-within li.selected:hover > .container {
+    background: #b57614 !important;
+    background-color: #b57614 !important;
+    color: #ebdbb2 !important;
+    box-shadow: inset 0 0 0 1px #8f3f71 !important;
+  }
+
+  #threadPane,
+  #threadPane > tree-view,
+  #threadTree,
+  #threadTree table[is="tree-view-table"],
+  #threadTree [is="tree-view-table-body"] {
+    background-color: var(--gb-list-bg) !important;
+    color: #d5c4a1 !important;
+  }
+
+  #threadTree table[is="tree-view-table"],
+  #threadTree table.tree-table,
+  #threadTree thead[is="tree-view-table-header"],
+  #threadTree thead.tree-table-header,
+  #threadTree thead[is="tree-view-table-header"] tr,
+  #threadTree thead.tree-table-header tr,
+  #threadTree thead[is="tree-view-table-header"] th,
+  #threadTree thead.tree-table-header th {
+    background: var(--gb-list-bg) !important;
+    background-color: var(--gb-list-bg) !important;
+    color: #d5c4a1 !important;
+  }
+
+  #threadTree th[is="tree-view-table-header-cell"] .tree-table-cell,
+  #threadTree th[is="tree-view-table-header-cell"] .tree-table-cell-container,
+  #threadTree th[is="tree-view-table-header-cell"] button,
+  #threadTree th[is="tree-view-table-header-cell"] .button-column-picker,
+  #threadTree th[is="tree-view-table-header-cell"]::before,
+  #threadTree th[is="tree-view-table-header-cell"]::after {
+    background: transparent !important;
+    background-color: transparent !important;
+    color: #d5c4a1 !important;
+  }
+
+  #threadTree [is="tree-view-table-body"] > .table-layout,
+  #threadTree [is="tree-view-table-body"] > .table-layout[data-properties~="dummy"]:not(.card-layout, :hover, .selected) {
+    background: var(--gb-list-bg) !important;
+    background-color: var(--gb-list-bg) !important;
+    color: #d5c4a1 !important;
+  }
+
+  #threadTree [is="tree-view-table-body"] > .table-layout.selected {
+    background: #a87933 !important;
+    background-color: #a87933 !important;
+    background-image: none !important;
+    color: #ebdbb2 !important;
+    box-shadow: inset 0 0 0 1px #7c6f64 !important;
+  }
+
+  #threadTree [is="tree-view-table-body"]:is(:focus, :focus-within) > .table-layout.selected,
+  #threadTree [is="tree-view-table-body"] > .table-layout.selected:focus-within {
+    background: #b57614 !important;
+    background-color: #b57614 !important;
+    background-image: none !important;
+    color: #ebdbb2 !important;
+    box-shadow: inset 0 0 0 1px #8f3f71 !important;
+  }
+
+  #threadTree [is="tree-view-table-body"] > .table-layout:hover:not(.selected) {
+    background: #665c54 !important;
+    background-color: #665c54 !important;
+    color: #d5c4a1 !important;
+  }
+}
